@@ -255,6 +255,12 @@
       "dependencies": {},
       "hash": "59356d47c170c64e6c885abe912545609e3d1a54"
     },
+    "tristanmcpherson-r2api": {
+      "version": "file:R2API",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

@@ -15,8 +15,8 @@ namespace WaffleHouse.Content
 {
     public static class WaffleHouseContent
     {
-        internal const string ScenesAssetBundleFileName = "";
-        internal const string AssetsAssetBundleFileName = "";
+        internal const string ScenesAssetBundleFileName = "wafflehousestage";
+        internal const string AssetsAssetBundleFileName = "wafflehouseassets";
 
         private static AssetBundle _scenesAssetBundle;
         private static AssetBundle _assetsAssetBundle;
@@ -48,26 +48,29 @@ namespace WaffleHouse.Content
         {
             _scenesAssetBundle = scenesAssetBundle;
             _assetsAssetBundle = assetsAssetBundle;
+#if DEBUG
+            Log.Debug($"Asset bundles found. Loading asset bundles...");
+#endif
 
             yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<Material[]>)((assets) =>
             {
                 var materials = assets;
 
-
-                foreach (Material material in materials)
+                if (materials != null)
                 {
-                    Log.Debug(material.name + " " + material.shader);
-                    if (!material.shader.name.StartsWith("Stubbed")) { continue; }
-
-                    var replacementShader = Addressables.LoadAssetAsync<Shader>(ShaderLookup[material.shader.name.ToLower()]).WaitForCompletion();
-                    Log.Debug(replacementShader.name);
-                    if (replacementShader)
+                    foreach (Material material in materials)
                     {
-                        material.shader = replacementShader;
-                        SwappedMaterials.Add(material);
+                        if (!material.shader.name.StartsWith("Stubbed")) { continue; }
+
+                        var replacementShader = Addressables.LoadAssetAsync<Shader>(ShaderLookup[material.shader.name.ToLower()]).WaitForCompletion();
+                        if (replacementShader)
+                        {
+                            material.shader = replacementShader;
+                            SwappedMaterials.Add(material);
+                        }
                     }
-                    Log.Debug(material.name + " " + material.shader);
                 }
+                
             }));
 
             yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<UnlockableDef[]>)((assets) =>
@@ -86,7 +89,9 @@ namespace WaffleHouse.Content
             {
                 SceneDefs = assets;
                 WHSceneDef = SceneDefs.First(sd => sd.baseSceneNameOverride == "wh_wafflehouse" );
+#if DEBUG
                 Log.Debug(WHSceneDef.nameToken);
+#endif
                 contentPack.sceneDefs.Add(assets);
             }));
 
@@ -98,12 +103,12 @@ namespace WaffleHouse.Content
             WHBazaarSeer = UnityEngine.Object.Instantiate(matBazaarSeerWispgraveyardRequest.Result);
             WHBazaarSeer.mainTexture = WHSceneDefPreviewSprite.texture;
             WHSceneDef.portalMaterial = WHBazaarSeer;
-            var mainTrackDefRequest = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/Base/Common/muFULLSong06.asset");
+            var mainTrackDefRequest = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/Base/Common/muSong13.asset");
             while (!mainTrackDefRequest.IsDone)
             {
                 yield return null;
             }
-            var bossTrackDefRequest = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/Base/Common/muSong16.asset");
+            var bossTrackDefRequest = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/Base/Common/muSong05.asset");
             while (!bossTrackDefRequest.IsDone)
             {
                 yield return null;
@@ -111,14 +116,16 @@ namespace WaffleHouse.Content
             WHSceneDef.mainTrack = mainTrackDefRequest.Result;
             WHSceneDef.bossTrack = bossTrackDefRequest.Result;
 
+            //Collection where the scene is added. This is a stage 2.
             var stageSceneCollectionRequest = Addressables.LoadAssetAsync<SceneCollection>("RoR2/Base/SceneGroups/sgStage2.asset");
             while (!stageSceneCollectionRequest.IsDone)
             {
                 yield return null;
             }
 
-            AddFBLSceneDefToStageSceneCollection(stageSceneCollectionRequest);
+            AddSceneDefToStageSceneCollection(stageSceneCollectionRequest);
 
+            //Collection of destinations after the stage is cleared. Grabbing the collection of stage 3s.
             var stageDestinationSceneCollectionRequest = Addressables.LoadAssetAsync<SceneCollection>("RoR2/Base/SceneGroups/sgStage3.asset");
             while (!stageDestinationSceneCollectionRequest.IsDone)
             {
@@ -127,7 +134,7 @@ namespace WaffleHouse.Content
             WHSceneDef.destinationsGroup = stageDestinationSceneCollectionRequest.Result;
         }
 
-        private static void AddFBLSceneDefToStageSceneCollection(AsyncOperationHandle<SceneCollection> stageSceneCollectionRequest)
+        private static void AddSceneDefToStageSceneCollection(AsyncOperationHandle<SceneCollection> stageSceneCollectionRequest)
         {
             var sceneEntries = stageSceneCollectionRequest.Result._sceneEntries.ToList();
             sceneEntries.Add(new SceneCollection.SceneEntry { sceneDef = WHSceneDef, weightMinusOne = 0 });

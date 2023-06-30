@@ -18,7 +18,7 @@ namespace WaffleHouse.Content
         {
             _contentPack.identifier = identifier;
 
-            var assetsFolderFullPath = Path.GetDirectoryName(typeof(ContentProvider).Assembly.Location);
+            var assetsFolderFullPath = Path.GetDirectoryName(typeof(ContentProvider).Assembly.Location) + "\\assetbundles";
             assetDirectory = assetsFolderFullPath;
 
 
