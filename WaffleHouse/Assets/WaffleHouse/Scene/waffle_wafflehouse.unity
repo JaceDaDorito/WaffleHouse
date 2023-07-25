@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 182155436}
   - component: {fileID: 182155435}
   - component: {fileID: 182155434}
+  - component: {fileID: 182155440}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -253,6 +254,9 @@ MonoBehaviour:
   maxSeriesSpawnInterval: 1
   minRerollSpawnInterval: 22.5
   maxRerollSpawnInterval: 30
+  moneyWaveIntervals:
+  - min: 1
+    max: 1
   teamIndex: 2
   creditMultiplier: 0.75
   spawnDistanceMultiplier: 1
@@ -265,6 +269,9 @@ MonoBehaviour:
   resetMonsterCardIfFailed: 1
   maximumNumberToSpawnBeforeSkipping: 6
   eliteBias: 1
+  onSpawnedServer:
+    m_PersistentCalls:
+      m_Calls: []
   combatSquad: {fileID: 0}
   spawnEffectPrefab: {fileID: 0}
   ignoreTeamSizeLimit: 0
@@ -291,6 +298,9 @@ MonoBehaviour:
   maxSeriesSpawnInterval: 1
   minRerollSpawnInterval: 4.5
   maxRerollSpawnInterval: 9
+  moneyWaveIntervals:
+  - min: 1
+    max: 1
   teamIndex: 2
   creditMultiplier: 0.75
   spawnDistanceMultiplier: 1
@@ -303,6 +313,9 @@ MonoBehaviour:
   resetMonsterCardIfFailed: 1
   maximumNumberToSpawnBeforeSkipping: 6
   eliteBias: 1
+  onSpawnedServer:
+    m_PersistentCalls:
+      m_Calls: []
   combatSquad: {fileID: 0}
   spawnEffectPrefab: {fileID: 0}
   ignoreTeamSizeLimit: 0
@@ -385,6 +398,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &182155440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182155433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbfee4d9ab2a2744b203e7e08720110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  address: RoR2/Base/Teleporters/iscTeleporter.asset
+  targetComponent: {fileID: 182155436}
+  targetMemberInfoName: (SceneDirector) teleporterSpawnCard
 --- !u!1 &514348723
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +473,7 @@ GameObject:
   - component: {fileID: 539968692}
   - component: {fileID: 539968694}
   m_Layer: 0
-  m_Name: Directional Light (SUN)
+  m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -583,9 +611,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820746317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.831865, y: 15.103647, z: -3.1287813}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1544060702}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -623,8 +652,12 @@ MonoBehaviour:
   interactableDccsPool: {fileID: 0}
   sceneDirectorInteractibleCredits: 200
   sceneDirectorMonsterCredits: 20
+  bonusInteractibleCreditObjects: []
+  monsterCards: []
+  interactableCards: []
   interactableCategories: {fileID: 0}
   monsterCategories: {fileID: 0}
+  possibleMonsterFamilies: []
 --- !u!114 &1488967581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,3 +690,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1544060701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1544060702}
+  - component: {fileID: 1544060703}
+  m_Layer: 11
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1544060702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544060701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 820746318}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1544060703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544060701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b585ce31f93d58489807db4907df51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  address: RoR2/Base/moon/FrogInteractable.prefab
+  setPositionAndRotationToZero: 1
+  useLocalPositionAndRotation: 0
+  refreshInEditor: 1
+  hasNetworkIdentity: 1

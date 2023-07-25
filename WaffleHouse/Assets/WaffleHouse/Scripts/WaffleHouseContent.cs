@@ -10,6 +10,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using RoR2.ExpansionManagement;
 using System.Collections.Generic;
 using RoR2.Networking;
+using R2API;
 
 namespace WaffleHouse.Content
 {
@@ -48,9 +49,7 @@ namespace WaffleHouse.Content
         {
             _scenesAssetBundle = scenesAssetBundle;
             _assetsAssetBundle = assetsAssetBundle;
-#if DEBUG
             Log.Debug($"Asset bundles found. Loading asset bundles...");
-#endif
 
             yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<Material[]>)((assets) =>
             {
@@ -80,29 +79,31 @@ namespace WaffleHouse.Content
             }));
 
 
-            yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<Sprite[]>)((assets) =>
+            /*yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<Sprite[]>)((assets) =>
             {
                 WHSceneDefPreviewSprite = assets.First(a => a.name == "texWHScenePreview");
-            }));
+            }));*/
 
             yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<SceneDef[]>)((assets) =>
             {
                 SceneDefs = assets;
-                WHSceneDef = SceneDefs.First(sd => sd.baseSceneNameOverride == "wh_wafflehouse" );
-#if DEBUG
+                WHSceneDef = SceneDefs.First(sd => sd.cachedName == "waffle_wafflehouse");
                 Log.Debug(WHSceneDef.nameToken);
-#endif
                 contentPack.sceneDefs.Add(assets);
             }));
 
-            var matBazaarSeerWispgraveyardRequest = Addressables.LoadAssetAsync<Material>("RoR2/Base/bazaar/matBazaarSeerWispgraveyard.mat");
-            while (!matBazaarSeerWispgraveyardRequest.IsDone)
+            var previewSpriteRequest = Addressables.LoadAssetAsync<Sprite>("RoR2/DLC1/ancientloft/texAncientLoftPreview.png");
+            while (!previewSpriteRequest.IsDone)
             {
                 yield return null;
             }
-            WHBazaarSeer = UnityEngine.Object.Instantiate(matBazaarSeerWispgraveyardRequest.Result);
-            WHBazaarSeer.mainTexture = WHSceneDefPreviewSprite.texture;
+            WHSceneDefPreviewSprite = previewSpriteRequest.Result;
+            WHBazaarSeer = StageRegistration.MakeBazaarSeerMaterial(WHSceneDefPreviewSprite.texture);
+            WHSceneDef.previewTexture = WHSceneDefPreviewSprite.texture;
             WHSceneDef.portalMaterial = WHBazaarSeer;
+
+            var dioramaPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/golemplains/GolemplainsDioramaDisplay.prefab");
+
             var mainTrackDefRequest = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/Base/Common/muSong13.asset");
             while (!mainTrackDefRequest.IsDone)
             {
@@ -116,30 +117,8 @@ namespace WaffleHouse.Content
             WHSceneDef.mainTrack = mainTrackDefRequest.Result;
             WHSceneDef.bossTrack = bossTrackDefRequest.Result;
 
-            //Collection where the scene is added. This is a stage 2.
-            var stageSceneCollectionRequest = Addressables.LoadAssetAsync<SceneCollection>("RoR2/Base/SceneGroups/sgStage2.asset");
-            while (!stageSceneCollectionRequest.IsDone)
-            {
-                yield return null;
-            }
-
-            AddSceneDefToStageSceneCollection(stageSceneCollectionRequest);
-
-            //Collection of destinations after the stage is cleared. Grabbing the collection of stage 3s.
-            var stageDestinationSceneCollectionRequest = Addressables.LoadAssetAsync<SceneCollection>("RoR2/Base/SceneGroups/sgStage3.asset");
-            while (!stageDestinationSceneCollectionRequest.IsDone)
-            {
-                yield return null;
-            }
-            WHSceneDef.destinationsGroup = stageDestinationSceneCollectionRequest.Result;
-        }
-
-        private static void AddSceneDefToStageSceneCollection(AsyncOperationHandle<SceneCollection> stageSceneCollectionRequest)
-        {
-            var sceneEntries = stageSceneCollectionRequest.Result._sceneEntries.ToList();
-            sceneEntries.Add(new SceneCollection.SceneEntry { sceneDef = WHSceneDef, weightMinusOne = 0 });
-            
-            stageSceneCollectionRequest.Result._sceneEntries = sceneEntries.ToArray();
+            StageRegistration.RegisterSceneDefToLoop(WHSceneDef);
+            StageRegistration.PrintSceneCollections(2);
         }
 
         private static IEnumerator LoadAllAssetsAsync<T>(AssetBundle assetBundle, IProgress<float> progress, Action<T[]> onAssetsLoaded) where T : UnityEngine.Object

@@ -20,7 +20,7 @@ MonoBehaviour:
     - {fileID: 102900000, guid: 70aa6f0bf61a49c46b5200e0a4064de5, type: 3}
   - assetBundleName: wafflehousestage
     assets:
-    - {fileID: 102900000, guid: 0cea0287e4d3dc345a2d8950268cfe49, type: 3}
+    - {fileID: 102900000, guid: 192de155125566a47ae879ecd043710f, type: 3}
 --- !u!114 &-5306771340006602463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d4d09ec817c24698d35dc9bf0704fdc, type: 2}
   - {fileID: 11400000, guid: bff73382628f698c89c1d9ae43c8f350, type: 2}
   - {fileID: 11400000, guid: 184f0fdf3edcd6bad171410f4e0fd947, type: 2}
-  - {fileID: 11400000, guid: 7d2f4d07cb6b5514f9dea096d2ddf394, type: 2}
+  - {fileID: 11400000, guid: f0d760e9d4649854da675f3b2978b41b, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

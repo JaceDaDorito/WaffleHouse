@@ -33,6 +33,8 @@ namespace WaffleHouse
         {
             instance = this;
 
+            Log.Init(Logger);
+
             ContentManager.collectContentPackProviders += GiveToRoR2OurContentPackProviders;
             Language.collectLanguageRootFolders += CollectLanguageRootFolders;
         }

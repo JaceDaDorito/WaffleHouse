@@ -1,7 +1,6 @@
 {
     "name": "WaffleHouse",
     "references": [
-        "GUID:a45de640a5e155a42b90a2d214e39389",
         "GUID:a44f47cf3ada4435dbc516bad0bc86fe"
     ],
     "includePlatforms": [],
@@ -21,7 +20,8 @@
         "UnityEngine.UI.dll",
         "Unity.TextMeshPro.dll",
         "RoR2.dll",
-        "Unity.ResourceManager.dll"
+        "Unity.ResourceManager.dll",
+        "R2API.Stages.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
