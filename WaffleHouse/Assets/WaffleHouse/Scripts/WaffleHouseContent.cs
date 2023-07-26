@@ -79,10 +79,10 @@ namespace WaffleHouse.Content
             }));
 
 
-            /*yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<Sprite[]>)((assets) =>
+            yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<Sprite[]>)((assets) =>
             {
                 WHSceneDefPreviewSprite = assets.First(a => a.name == "texWHScenePreview");
-            }));*/
+            }));
 
             yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<SceneDef[]>)((assets) =>
             {
@@ -92,17 +92,16 @@ namespace WaffleHouse.Content
                 contentPack.sceneDefs.Add(assets);
             }));
 
-            var previewSpriteRequest = Addressables.LoadAssetAsync<Sprite>("RoR2/DLC1/ancientloft/texAncientLoftPreview.png");
-            while (!previewSpriteRequest.IsDone)
-            {
-                yield return null;
-            }
-            WHSceneDefPreviewSprite = previewSpriteRequest.Result;
             WHBazaarSeer = StageRegistration.MakeBazaarSeerMaterial(WHSceneDefPreviewSprite.texture);
             WHSceneDef.previewTexture = WHSceneDefPreviewSprite.texture;
             WHSceneDef.portalMaterial = WHBazaarSeer;
 
             var dioramaPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/golemplains/GolemplainsDioramaDisplay.prefab");
+            while (!dioramaPrefab.IsDone)
+            {
+                yield return null;
+            }
+            WHSceneDef.dioramaPrefab = dioramaPrefab.Result;
 
             var mainTrackDefRequest = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/Base/Common/muSong13.asset");
             while (!mainTrackDefRequest.IsDone)
@@ -118,7 +117,7 @@ namespace WaffleHouse.Content
             WHSceneDef.bossTrack = bossTrackDefRequest.Result;
 
             StageRegistration.RegisterSceneDefToLoop(WHSceneDef);
-            StageRegistration.PrintSceneCollections(2);
+            StageRegistration.PrintSceneCollections();
         }
 
         private static IEnumerator LoadAllAssetsAsync<T>(AssetBundle assetBundle, IProgress<float> progress, Action<T[]> onAssetsLoaded) where T : UnityEngine.Object

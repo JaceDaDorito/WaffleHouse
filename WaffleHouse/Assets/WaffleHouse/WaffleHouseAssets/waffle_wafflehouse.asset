@@ -16,18 +16,18 @@ MonoBehaviour:
     m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
-  baseSceneNameOverride: ancientloft
+  baseSceneNameOverride: waffle_wafflehouse
   sceneType: 1
   isOfflineScene: 0
   stageOrder: 2
   requiredExpansion: {fileID: 0}
-  nameToken: MAP_GOLEMPLAINS_TITLE
-  subtitleToken: MAP_GOLEMPLAINS_SUBTITLE
+  nameToken: WAFFLE_MAP_WAFFLEHOUSE_NAME
+  subtitleToken: WAFFLE_MAP_WAFFLEHOUSE_SUBTITLE
   previewTexture: {fileID: 2800000, guid: 7fa9ef45bd5be01419eddd3ee69d7daf, type: 3}
   portalMaterial: {fileID: 0}
-  portalSelectionMessageString: BAZAAR_SEER_GOLEMPLAINS
-  shouldIncludeInLogbook: 0
-  loreToken: MAP_GOLEMPLAINS_LORE
+  portalSelectionMessageString: WAFFLE_BAZAAR_SEER_WAFFLEHOUSE
+  shouldIncludeInLogbook: 1
+  loreToken: WAFFLE_MAP_WAFFLEHOUSE_LORE
   dioramaPrefab: {fileID: 0}
   mainTrack: {fileID: 0}
   bossTrack: {fileID: 0}
