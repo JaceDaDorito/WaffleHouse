@@ -46,7 +46,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "1212fab3ee16806c116b347e9bf7ef9aea501116"
+      "hash": "54f220cb9c5e23c52e46467dbadc6e230879e2cb"
     },
     "mmhook-assemblies": {
       "version": "file:mmhook-assemblies",
