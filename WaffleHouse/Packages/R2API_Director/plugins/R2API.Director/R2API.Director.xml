@@ -4,6 +4,45 @@
         <name>R2API.Director</name>
     </assembly>
     <members>
+        <member name="T:R2API.AddressableDCCSPool">
+            <summary>
+            A <see cref="T:R2API.AddressableDCCSPool"/> is a version of a <see cref="T:RoR2.DccsPool"/> that can be created from the editor itself, it allows you to create complex DccsPools using R2API's <see cref="T:R2API.AddressReferencedAssets.AddressReferencedAsset"/> system and your own existing spawn cards
+            <br>You should also see <see cref="T:R2API.AddressableDirectorCardCategorySelection"/></br>
+            </summary>
+        </member>
+        <member name="T:R2API.AddressableDCCSPool.PoolEntry">
+            <summary>
+            Represents a version of <see cref="T:RoR2.DccsPool.PoolEntry"/> that uses <see cref="T:R2API.AddressableDirectorCardCategorySelection"/> for representing a pool entry
+            </summary>
+        </member>
+        <member name="T:R2API.AddressableDCCSPool.ConditionalPoolEntry">
+            <summary>
+            Represents a conditional version of a <see cref="T:R2API.AddressableDCCSPool.PoolEntry"/>
+            <br>Contains a <see cref="F:R2API.AddressableDCCSPool.ConditionalPoolEntry.requiredExpansions"/> array that's populated using <see cref="T:R2API.AddressReferencedAssets.AddressReferencedExpansionDef"/></br>
+            </summary>
+        </member>
+        <member name="T:R2API.AddressableDCCSPool.Category">
+            <summary>
+            Represents a category of DirectorCardCategorySelections for this pool
+            </summary>
+        </member>
+        <member name="T:R2API.AddressableDirectorCard">
+            <summary>
+            Represents a <see cref="T:RoR2.DirectorCard"/> that can be created from using <see cref="!:"/>
+            </summary>
+        </member>
+        <member name="T:R2API.AddressableDirectorCardCategorySelection">
+            <summary>
+            A <see cref="T:R2API.AddressableDirectorCardCategorySelection"/> is a version of a <see cref="T:RoR2.DirectorCardCategorySelection"/> that can be used for creating a custom and complex <see cref="T:RoR2.DirectorCardCategorySelection"/> for stages, using R2API's <see cref="T:R2API.AddressReferencedAssets.AddressReferencedAsset"/> system and your own existing spawn cards
+            <para>All the values from this category selection will be added to the <see cref="T:RoR2.DirectorCardCategorySelection"/> specified in <see cref="F:R2API.AddressableDirectorCardCategorySelection.targetCardCategorySelection"/></para>
+            <br>You should also see <see cref="T:R2API.AddressableDCCSPool"/></br>
+            </summary>
+        </member>
+        <member name="T:R2API.AddressableDirectorCardCategorySelection.Category">
+            <summary>
+            Represents a category of spawn cards
+            </summary>
+        </member>
         <member name="T:R2API.DirectorAPI">
             <summary>
             API for modifying the monster and scene directors.

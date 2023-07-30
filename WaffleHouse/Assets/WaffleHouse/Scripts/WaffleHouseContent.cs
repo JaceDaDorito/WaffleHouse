@@ -117,7 +117,7 @@ namespace WaffleHouse.Content
             WHSceneDef.bossTrack = bossTrackDefRequest.Result;
 
             StageRegistration.RegisterSceneDefToLoop(WHSceneDef);
-            StageRegistration.PrintSceneCollections();
+            Log.Debug(WHSceneDef.destinationsGroup);
         }
 
         private static IEnumerator LoadAllAssetsAsync<T>(AssetBundle assetBundle, IProgress<float> progress, Action<T[]> onAssetsLoaded) where T : UnityEngine.Object

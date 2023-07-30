@@ -22,10 +22,11 @@
       "dependencies": {}
     },
     "com.unity.multiplayer-hlapi": {
-      "version": "file:RoR2MultiplayerHLAPI",
+      "version": "https://github.com/risk-of-thunder/UnityMultiplayerHLAPI.git",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "ab4c0e7aca99354e4b5b211906e4acd83264ed12"
     },
     "com.unity.postprocessing": {
       "version": "2.3.0",
@@ -46,7 +47,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "47effcaef5fae14d1b5f7ca50a2b185a46ac1111"
+      "hash": "da03187a82df1d4db51aad0fe3e291b46822211e"
     },
     "mmhook-assemblies": {
       "version": "file:mmhook-assemblies",
@@ -78,6 +79,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "riskofthunder-r2api_addressables": {
+      "version": "file:R2API_Addressables",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "riskofthunder-r2api_artifactcode": {
       "version": "file:R2API_ArtifactCode",
       "depth": 0,
@@ -92,6 +99,12 @@
     },
     "riskofthunder-r2api_commandhelper": {
       "version": "file:R2API_CommandHelper",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_contentmanagement": {
+      "version": "file:R2API_ContentManagement",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
@@ -210,6 +223,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "riskofthunder-r2api_stages": {
+      "version": "file:R2API_Stages",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "riskofthunder-r2api_tempvisualeffect": {
       "version": "file:R2API_TempVisualEffect",
       "depth": 0,
@@ -229,10 +248,11 @@
       "dependencies": {}
     },
     "riskofthunder-ror2editorkit": {
-      "version": "file:RoR2EditorKit",
+      "version": "https://github.com/risk-of-thunder/RoR2EditorKit.git",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "0612fc09a4019b5ccc7d9ff919e4ee61399146d4"
     },
     "riskofthunder-ror2importextensions": {
       "version": "https://github.com/risk-of-thunder/RoR2ImportExtensions.git#1.3.7",
