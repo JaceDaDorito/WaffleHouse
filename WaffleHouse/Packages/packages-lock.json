@@ -47,7 +47,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "da03187a82df1d4db51aad0fe3e291b46822211e"
+      "hash": "0026ffe2f77f5c01a26cbd9e4a66c4bb0298f425"
     },
     "mmhook-assemblies": {
       "version": "file:mmhook-assemblies",
@@ -252,7 +252,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "0612fc09a4019b5ccc7d9ff919e4ee61399146d4"
+      "hash": "bf6bb94284f4071226a9464146a6c5f77b68251e"
     },
     "riskofthunder-ror2importextensions": {
       "version": "https://github.com/risk-of-thunder/RoR2ImportExtensions.git#1.3.7",
@@ -266,13 +266,6 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
-    },
-    "teammoonstorm-moonstormsharedutils": {
-      "version": "https://github.com/TeamMoonstorm/MoonstormSharedUtils.git#1.6.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "20f1804369f66c0ea6c166ef103c65854bead589"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
