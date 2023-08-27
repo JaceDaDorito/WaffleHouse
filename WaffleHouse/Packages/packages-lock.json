@@ -47,7 +47,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "0026ffe2f77f5c01a26cbd9e4a66c4bb0298f425"
+      "hash": "2019ffe2bb4cf78b7e1ea8523a338f865cb4865b"
     },
     "mmhook-assemblies": {
       "version": "file:mmhook-assemblies",
@@ -260,12 +260,6 @@
       "source": "git",
       "dependencies": {},
       "hash": "ebe4d6e4a27e4b766b33e5bdd3ab6c7d17518dfb"
-    },
-    "rune580-risk_of_options": {
-      "version": "file:Risk_Of_Options",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

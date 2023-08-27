@@ -19,7 +19,7 @@ MonoBehaviour:
   Author: RiskofThunder
   Name: BepInEx_GUI
   Description: Graphical User Interface meant to replace the regular console host that is used by BepInEx when the config setting is enabled.
-  Version: 3.0.2
+  Version: 3.0.1
   Dependencies: []
 --- !u!114 &11400000
 MonoBehaviour:

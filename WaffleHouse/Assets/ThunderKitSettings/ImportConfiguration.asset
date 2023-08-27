@@ -113,7 +113,7 @@ MonoBehaviour:
   - {fileID: -1020572823582076291}
   - {fileID: -6298805260445652467}
   - {fileID: 6466266229789534214}
-  configurationIndex: -1
+  configurationIndex: 22
   totalImportExtensionCount: 22
 --- !u!114 &903172761523990197
 MonoBehaviour:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f4761da1836bc043a94000ffe25bf40, type: 3}
   m_Name: Install RoR2 Editor Kit
   m_EditorClassIdentifier: 
-  enabled: 1
+  enabled: 0
 --- !u!114 &1063624110973961890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a6266570ba40d41bad5cf59676ab77, type: 3}
   m_Name: Install RoR2MultiplayerHLAPI
   m_EditorClassIdentifier: 
-  enabled: 1
+  enabled: 0
 --- !u!114 &6466266229789534214
 MonoBehaviour:
   m_ObjectHideFlags: 0
