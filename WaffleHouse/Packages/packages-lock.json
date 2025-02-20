@@ -7,19 +7,42 @@
       "dependencies": {}
     },
     "com.passivepicasso.thunderkit": {
-      "version": "https://github.com/PassivePicasso/ThunderKit.git#8.0.3",
+      "version": "https://github.com/PassivePicasso/ThunderKit.git",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.scriptablebuildpipeline": "1.16.1"
       },
-      "hash": "4e3d3c17593fe72bffe9d8c6d32bb53be948c31e"
+      "hash": "2f048021a13d98a8600898a6f4203cfe18554f36"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
+    },
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ext.nunit": {
+      "version": "1.0.6",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ide.visualstudio": {
+      "version": "2.0.22",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.9"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.multiplayer-hlapi": {
       "version": "https://github.com/risk-of-thunder/UnityMultiplayerHLAPI.git",
@@ -36,10 +59,21 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "1.16.1",
+      "version": "1.20.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.test-framework": {
+      "version": "1.1.33",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ext.nunit": "1.0.6",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "jace-locationsofprecipitation": {
@@ -47,7 +81,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2019ffe2bb4cf78b7e1ea8523a338f865cb4865b"
+      "hash": "d23f3e51b5cb701b7fa923762bedc4de0f2ad926"
     },
     "mmhook-assemblies": {
       "version": "file:mmhook-assemblies",
@@ -223,8 +257,8 @@
       "source": "embedded",
       "dependencies": {}
     },
-    "riskofthunder-r2api_stages": {
-      "version": "file:R2API_Stages",
+    "riskofthunder-r2api_stringserializerextensions": {
+      "version": "file:R2API_StringSerializerExtensions",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
@@ -251,15 +285,17 @@
       "version": "https://github.com/risk-of-thunder/RoR2EditorKit.git",
       "depth": 0,
       "source": "git",
-      "dependencies": {},
-      "hash": "bf6bb94284f4071226a9464146a6c5f77b68251e"
+      "dependencies": {
+        "com.unity.editorcoroutines": "1.0.0"
+      },
+      "hash": "c909d421f3e011d87bf46cb05b58954efae8b5f2"
     },
     "riskofthunder-ror2importextensions": {
-      "version": "https://github.com/risk-of-thunder/RoR2ImportExtensions.git#1.3.7",
+      "version": "https://github.com/Nebby1999/RoR2ImportExtensions.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "ebe4d6e4a27e4b766b33e5bdd3ab6c7d17518dfb"
+      "hash": "2dcb28a19f564e8d8c39a6f9eb23e20ce8f8737b"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
@@ -394,6 +430,18 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.uielementsnative": "1.0.0"
+      }
+    },
+    "com.unity.modules.uielementsnative": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       }

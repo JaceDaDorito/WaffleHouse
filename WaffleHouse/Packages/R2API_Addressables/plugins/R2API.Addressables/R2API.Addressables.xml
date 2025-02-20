@@ -29,10 +29,23 @@
             <br>Setting this property sets the address to null if the provided value is not null.</br>
             </summary>
         </member>
+        <member name="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.AssetExists">
+            <summary>
+            Determines wether <see cref="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.Asset"/>'s backing field has a value.
+            </summary>
+        </member>
         <member name="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.Address">
             <summary>
             The string to use for loading the <see cref="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.Asset"/>
             <br>Setting this value sets the current <see cref="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.Asset"/> to null and <see cref="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.UseDirectReference"/> to false. if the game has already finished loading, the new Asset is loaded.</br>
+            </summary>
+        </member>
+        <member name="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.IsInvalid">
+            <summary>
+            Whether the AddressReferencedAsset is considered Invalid.
+            <para>For an AddressReferencedAsset to be invalid it must have the following characteristics:</para>
+            <br>A: <see cref="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.Asset"/>'s backing field value is null</br>
+            <br>B: <see cref="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.Address"/>'s backing field value is null, empty or whitespace</br>
             </summary>
         </member>
         <member name="P:R2API.AddressReferencedAssets.AddressReferencedAsset`1.UseDirectReference">
@@ -150,11 +163,89 @@
             <br>The <see cref="T:RoR2.BuffDef"/> can also be loaded via the <see cref="T:RoR2.BuffCatalog"/>, as such, you should wait until <see cref="E:R2API.AddressReferencedAssets.AddressReferencedAsset.OnAddressReferencedAssetsLoaded"/> gets raised.</br>
             </summary>
         </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedBuffDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedBuffDef)~System.Boolean">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedBuffDef"/> to a boolean value
+            <br>Allows you to keep using the unity Syntax for checking if an object exists.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedBuffDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedBuffDef)~RoR2.BuffDef">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedBuffDef"/> to it's currently loaded <see cref="!:Asset"/> value
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedBuffDef.op_Implicit(System.String)~R2API.AddressReferencedAssets.AddressReferencedBuffDef">
+            <summary>
+            Operator for encapsulating a <see cref="T:System.String"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedBuffDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedBuffDef.op_Implicit(RoR2.BuffDef)~R2API.AddressReferencedAssets.AddressReferencedBuffDef">
+            <summary>
+            Operator for encapsulating an <see cref="T:RoR2.BuffDef"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedBuffDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedBuffDef.#ctor">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor"/>
+            <br>T is <see cref="T:RoR2.BuffDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedBuffDef.#ctor(RoR2.BuffDef)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(`0)"/>
+            <br>T is <see cref="T:RoR2.BuffDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedBuffDef.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(System.String)"/>
+            <br>T is <see cref="T:RoR2.BuffDef"/></br>
+            </summary>
+        </member>
         <member name="T:R2API.AddressReferencedAssets.AddressReferencedEliteDef">
             <summary>
             <inheritdoc cref="T:R2API.AddressReferencedAssets.AddressReferencedAsset`1"/>
             <br>T is <see cref="T:RoR2.EliteDef"/></br>
             <br>The <see cref="T:RoR2.EliteDef"/> can also be loaded via the <see cref="T:RoR2.EliteCatalog"/>, as such, you should wait until <see cref="E:R2API.AddressReferencedAssets.AddressReferencedAsset.OnAddressReferencedAssetsLoaded"/> gets raised.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEliteDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedEliteDef)~System.Boolean">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedEliteDef"/> to a boolean value
+            <br>Allows you to keep using the unity Syntax for checking if an object exists.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEliteDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedEliteDef)~RoR2.EliteDef">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedEliteDef"/> to it's currently loaded <see cref="!:Asset"/> value
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEliteDef.op_Implicit(System.String)~R2API.AddressReferencedAssets.AddressReferencedEliteDef">
+            <summary>
+            Operator for encapsulating a <see cref="T:System.String"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedEliteDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEliteDef.op_Implicit(RoR2.EliteDef)~R2API.AddressReferencedAssets.AddressReferencedEliteDef">
+            <summary>
+            Operator for encapsulating an <see cref="T:RoR2.EliteDef"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedEliteDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEliteDef.#ctor">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor"/>
+            <br>T is <see cref="T:RoR2.EliteDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEliteDef.#ctor(RoR2.EliteDef)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(`0)"/>
+            <br>T is <see cref="T:RoR2.EliteDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEliteDef.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(System.String)"/>
+            <br>T is <see cref="T:RoR2.EliteDef"/></br>
             </summary>
         </member>
         <member name="T:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef">
@@ -164,11 +255,89 @@
             <br>The <see cref="T:RoR2.EquipmentDef"/> can also be loaded via the <see cref="T:RoR2.EquipmentCatalog"/>, as such, you should wait until <see cref="E:R2API.AddressReferencedAssets.AddressReferencedAsset.OnAddressReferencedAssetsLoaded"/> gets raised.</br>
             </summary>
         </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedEquipmentDef)~System.Boolean">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef"/> to a boolean value
+            <br>Allows you to keep using the unity Syntax for checking if an object exists.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedEquipmentDef)~RoR2.EquipmentDef">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef"/> to it's currently loaded <see cref="!:Asset"/> value
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef.op_Implicit(System.String)~R2API.AddressReferencedAssets.AddressReferencedEquipmentDef">
+            <summary>
+            Operator for encapsulating a <see cref="T:System.String"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef.op_Implicit(RoR2.EquipmentDef)~R2API.AddressReferencedAssets.AddressReferencedEquipmentDef">
+            <summary>
+            Operator for encapsulating an <see cref="T:RoR2.EquipmentDef"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef.#ctor">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor"/>
+            <br>T is <see cref="T:RoR2.EquipmentDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef.#ctor(RoR2.EquipmentDef)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(`0)"/>
+            <br>T is <see cref="T:RoR2.EquipmentDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedEquipmentDef.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(System.String)"/>
+            <br>T is <see cref="T:RoR2.EquipmentDef"/></br>
+            </summary>
+        </member>
         <member name="T:R2API.AddressReferencedAssets.AddressReferencedExpansionDef">
             <summary>
             <inheritdoc cref="T:R2API.AddressReferencedAssets.AddressReferencedAsset`1"/>
             <br>T is <see cref="T:RoR2.ExpansionManagement.ExpansionDef"/></br>
             <br>The <see cref="T:RoR2.ExpansionManagement.ExpansionDef"/> can also be loaded via the <see cref="T:RoR2.ExpansionManagement.ExpansionCatalog"/>, as such, you should wait until <see cref="E:R2API.AddressReferencedAssets.AddressReferencedAsset.OnAddressReferencedAssetsLoaded"/> gets raised.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedExpansionDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedExpansionDef)~System.Boolean">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedExpansionDef"/> to a boolean value
+            <br>Allows you to keep using the unity Syntax for checking if an object exists.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedExpansionDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedExpansionDef)~RoR2.ExpansionManagement.ExpansionDef">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedExpansionDef"/> to it's currently loaded <see cref="!:Asset"/> value
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedExpansionDef.op_Implicit(System.String)~R2API.AddressReferencedAssets.AddressReferencedExpansionDef">
+            <summary>
+            Operator for encapsulating a <see cref="T:System.String"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedExpansionDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedExpansionDef.op_Implicit(RoR2.ExpansionManagement.ExpansionDef)~R2API.AddressReferencedAssets.AddressReferencedExpansionDef">
+            <summary>
+            Operator for encapsulating an <see cref="T:RoR2.ExpansionManagement.ExpansionDef"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedExpansionDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedExpansionDef.#ctor">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor"/>
+            <br>T is <see cref="T:RoR2.ExpansionManagement.ExpansionDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedExpansionDef.#ctor(RoR2.ExpansionManagement.ExpansionDef)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(`0)"/>
+            <br>T is <see cref="T:RoR2.ExpansionManagement.ExpansionDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedExpansionDef.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(System.String)"/>
+            <br>T is <see cref="T:RoR2.ExpansionManagement.ExpansionDef"/></br>
             </summary>
         </member>
         <member name="T:R2API.AddressReferencedAssets.AddressReferencedItemDef">
@@ -178,9 +347,87 @@
             <br>The <see cref="T:RoR2.ItemDef"/> can also be loaded via the <see cref="T:RoR2.ItemCatalog"/>, as such, you should wait until <see cref="E:R2API.AddressReferencedAssets.AddressReferencedAsset.OnAddressReferencedAssetsLoaded"/> gets raised.</br>
             </summary>
         </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedItemDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedItemDef)~System.Boolean">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedItemDef"/> to a boolean value
+            <br>Allows you to keep using the unity Syntax for checking if an object exists.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedItemDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedItemDef)~RoR2.ItemDef">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedItemDef"/> to it's currently loaded <see cref="!:Asset"/> value
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedItemDef.op_Implicit(System.String)~R2API.AddressReferencedAssets.AddressReferencedItemDef">
+            <summary>
+            Operator for encapsulating a <see cref="T:System.String"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedItemDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedItemDef.op_Implicit(RoR2.ItemDef)~R2API.AddressReferencedAssets.AddressReferencedItemDef">
+            <summary>
+            Operator for encapsulating an <see cref="T:RoR2.ItemDef"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedItemDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedItemDef.#ctor">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor"/>
+            <br>T is <see cref="T:RoR2.ItemDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedItemDef.#ctor(RoR2.ItemDef)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(`0)"/>
+            <br>T is <see cref="T:RoR2.ItemDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedItemDef.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(System.String)"/>
+            <br>T is <see cref="T:RoR2.ItemDef"/></br>
+            </summary>
+        </member>
         <member name="T:R2API.AddressReferencedAssets.AddressReferencedPrefab">
             <summary>
             <inheritdoc cref="T:R2API.AddressReferencedAssets.AddressReferencedAsset`1"/>
+            <br>T is <see cref="T:UnityEngine.GameObject"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedPrefab.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedPrefab)~System.Boolean">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedPrefab"/> to a boolean value
+            <br>Allows you to keep using the unity Syntax for checking if an object exists.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedPrefab.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedPrefab)~UnityEngine.GameObject">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedPrefab"/> to it's currently loaded <see cref="!:Asset"/> value
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedPrefab.op_Implicit(System.String)~R2API.AddressReferencedAssets.AddressReferencedPrefab">
+            <summary>
+            Operator for encapsulating a <see cref="T:System.String"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedPrefab"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedPrefab.op_Implicit(UnityEngine.GameObject)~R2API.AddressReferencedAssets.AddressReferencedPrefab">
+            <summary>
+            Operator for encapsulating an <see cref="T:UnityEngine.GameObject"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedPrefab"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedPrefab.#ctor">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor"/>
+            <br>T is <see cref="T:UnityEngine.GameObject"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedPrefab.#ctor(UnityEngine.GameObject)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(`0)"/>
+            <br>T is <see cref="T:UnityEngine.GameObject"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedPrefab.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(System.String)"/>
             <br>T is <see cref="T:UnityEngine.GameObject"/></br>
             </summary>
         </member>
@@ -190,11 +437,89 @@
             <br>T is <see cref="T:RoR2.SpawnCard"/></br>
             </summary>
         </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedSpawnCard.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedSpawnCard)~System.Boolean">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedSpawnCard"/> to a boolean value
+            <br>Allows you to keep using the unity Syntax for checking if an object exists.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedSpawnCard.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedSpawnCard)~RoR2.SpawnCard">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedSpawnCard"/> to it's currently loaded <see cref="!:Asset"/> value
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedSpawnCard.op_Implicit(System.String)~R2API.AddressReferencedAssets.AddressReferencedSpawnCard">
+            <summary>
+            Operator for encapsulating a <see cref="T:System.String"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedSpawnCard"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedSpawnCard.op_Implicit(RoR2.SpawnCard)~R2API.AddressReferencedAssets.AddressReferencedSpawnCard">
+            <summary>
+            Operator for encapsulating an <see cref="T:RoR2.SpawnCard"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedSpawnCard"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedSpawnCard.#ctor">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor"/>
+            <br>T is <see cref="T:RoR2.SpawnCard"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedSpawnCard.#ctor(RoR2.SpawnCard)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(`0)"/>
+            <br>T is <see cref="T:RoR2.SpawnCard"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedSpawnCard.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(System.String)"/>
+            <br>T is <see cref="T:RoR2.SpawnCard"/></br>
+            </summary>
+        </member>
         <member name="T:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef">
             <summary>
             <inheritdoc cref="T:R2API.AddressReferencedAssets.AddressReferencedAsset`1"/>
             <br>T is <see cref="T:RoR2.UnlockableDef"/></br>
             <br>The <see cref="T:RoR2.UnlockableDef"/> can also be loaded via the <see cref="T:RoR2.UnlockableCatalog"/>, as such, you should wait until <see cref="E:R2API.AddressReferencedAssets.AddressReferencedAsset.OnAddressReferencedAssetsLoaded"/> gets raised.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedUnlockableDef)~System.Boolean">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef"/> to a boolean value
+            <br>Allows you to keep using the unity Syntax for checking if an object exists.</br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef.op_Implicit(R2API.AddressReferencedAssets.AddressReferencedUnlockableDef)~RoR2.UnlockableDef">
+            <summary>
+            Operator for casting <see cref="T:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef"/> to it's currently loaded <see cref="!:Asset"/> value
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef.op_Implicit(System.String)~R2API.AddressReferencedAssets.AddressReferencedUnlockableDef">
+            <summary>
+            Operator for encapsulating a <see cref="T:System.String"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef.op_Implicit(RoR2.UnlockableDef)~R2API.AddressReferencedAssets.AddressReferencedUnlockableDef">
+            <summary>
+            Operator for encapsulating an <see cref="T:RoR2.UnlockableDef"/> inside an <see cref="T:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef"/>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef.#ctor">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor"/>
+            <br>T is <see cref="T:RoR2.UnlockableDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef.#ctor(RoR2.UnlockableDef)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(`0)"/>
+            <br>T is <see cref="T:RoR2.UnlockableDef"/></br>
+            </summary>
+        </member>
+        <member name="M:R2API.AddressReferencedAssets.AddressReferencedUnlockableDef.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:R2API.AddressReferencedAssets.AddressReferencedAsset`1.#ctor(System.String)"/>
+            <br>T is <see cref="T:RoR2.UnlockableDef"/></br>
             </summary>
         </member>
         <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">

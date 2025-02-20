@@ -377,6 +377,11 @@
             External / Internal Name : The Planetarium / voidstage
             </summary>
         </member>
+        <member name="F:R2API.DirectorAPI.Stage.VerdantFalls">
+            <summary>
+            External / Internal Name : Verdant Falls / lakes
+            </summary>
+        </member>
         <member name="M:R2API.DirectorAPI.ParseInternalStageName(System.String)">
             <summary>
             Returns the <see cref="T:R2API.DirectorAPI.Stage"/> based on the internal name (<see cref="P:RoR2.SceneDef.baseSceneName"/>) of the stage.

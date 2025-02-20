@@ -11,6 +11,7 @@ using RoR2.ExpansionManagement;
 using System.Collections.Generic;
 using RoR2.Networking;
 using R2API;
+using LOP;
 
 namespace WaffleHouse.Content
 {
@@ -29,21 +30,6 @@ namespace WaffleHouse.Content
         internal static Sprite WHSceneDefPreviewSprite;
         internal static Material WHBazaarSeer;
 
-        public static List<Material> SwappedMaterials = new List<Material>(); //debug
-
-        public static Dictionary<string, string> ShaderLookup = new Dictionary<string, string>()
-        {
-            {"stubbedror2/base/shaders/hgstandard", "RoR2/Base/Shaders/HGStandard.shader"},
-            {"stubbedror2/base/shaders/hgsnowtopped", "RoR2/Base/Shaders/HGSnowTopped.shader"},
-            {"stubbedror2/base/shaders/hgtriplanarterrainblend", "RoR2/Base/Shaders/HGTriplanarTerrainBlend.shader"},
-            {"stubbedror2/base/shaders/hgintersectioncloudremap", "RoR2/Base/Shaders/HGIntersectionCloudRemap.shader" },
-            {"stubbedror2/base/shaders/hgcloudremap", "RoR2/Base/Shaders/HGCloudRemap.shader" },
-            {"stubbedror2/base/shaders/hgdistortion", "RoR2/Base/Shaders/HGDistortion.shader" },
-            {"stubbedcalm water/calmwater - dx11 - doublesided", "Calm Water/CalmWater - DX11 - DoubleSided.shader" },
-            {"stubbedcalm water/calmwater - dx11", "Calm Water/CalmWater - DX11.shader" },
-            {"stubbednature/speedtree", "RoR2/Base/Shaders/SpeedTreeCustom.shader"}
-        };
-
 
         internal static IEnumerator LoadAssetBundlesAsync(AssetBundle scenesAssetBundle, AssetBundle assetsAssetBundle, IProgress<float> progress, ContentPack contentPack)
         {
@@ -59,17 +45,9 @@ namespace WaffleHouse.Content
                 {
                     foreach (Material material in materials)
                     {
-                        if (!material.shader.name.StartsWith("Stubbed")) { continue; }
-
-                        var replacementShader = Addressables.LoadAssetAsync<Shader>(ShaderLookup[material.shader.name.ToLower()]).WaitForCompletion();
-                        if (replacementShader)
-                        {
-                            material.shader = replacementShader;
-                            SwappedMaterials.Add(material);
-                        }
+                        ShaderSwap.ConvertShader(material);
                     }
                 }
-                
             }));
 
             yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<UnlockableDef[]>)((assets) =>

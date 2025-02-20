@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2099981080, guid: 45feadaaa90b2d2217207fb8b533753e, type: 3}
+  m_Name: adccsWHInteractables
+  m_EditorClassIdentifier: 
+  targetCardCategorySelection: {fileID: 11400000, guid: e3e8ace1a81c67847922e22181a9c732,
+    type: 2}
+  categories:
+  - name: Rare
+    cards:
+    - spawnCard:
+        _asset: {fileID: 0}
+        _address: RoR2/Base/RadarTower/iscRadarTower.asset
+        _useDirectReference: 0
+      selectionWeight: 2
+      spawnDistance: 0
+      preventOverhead: 0
+      minimumStageCompletions: 0
+      requiredUnlockableDef:
+        _asset: {fileID: 0}
+        _address: 
+        _useDirectReference: 0
+      forbiddenUnlockableDef:
+        _asset: {fileID: 11400000, guid: 17772fe18e439ad488717190ba452e4d, type: 2}
+        _address: 
+        _useDirectReference: 1
+    selectionWeight: 0.4

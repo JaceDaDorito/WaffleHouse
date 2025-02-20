@@ -21,13 +21,15 @@ MonoBehaviour:
   CreatedDateFormat: MMM/dd HH:mm:ss
   ShowLogWindow: 1
   LogPackageSourceTimings: 0
+  GenerateAssetsProject: 0
+  FixLocalDiskPackages: 0
   ImageCachePath: Library/MarkdownImageCache
-  CachedImageCount: 1
-  CacheSize: 0.09
+  CachedImageCount: 5
+  CacheSize: 0.15
   MarkdownOpenMode: 1
   SelectedPipeline: {fileID: 0}
   SelectedManifest: {fileID: 0}
   QuickAccessPipelines: []
   QuickAccessManifests: []
-  ImportConfiguration: {fileID: 11400000, guid: ee6fefe6b883783418e0844db6425b2f,
+  ImportConfiguration: {fileID: 11400000, guid: ede55cdc863b0d54a806c08a4a037d44,
     type: 2}
