@@ -38,6 +38,9 @@ MonoBehaviour:
   - assetBundleName: wafflehousestage
     assets:
     - {fileID: 102900000, guid: 192de155125566a47ae879ecd043710f, type: 3}
+  - assetBundleName: riskofresourcesassets
+    assets:
+    - {fileID: 102900000, guid: 9f0ef07a247b1f9469750645799484f8, type: 3}
 --- !u!114 &-5306771340006602463
 MonoBehaviour:
   m_ObjectHideFlags: 0
